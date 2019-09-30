@@ -19,6 +19,6 @@ module.exports = class connect extends Command {
 
       message.reply(x);
 
-    });
+    };
     }
 };
