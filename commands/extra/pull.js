@@ -10,12 +10,12 @@ const pool = new Pool({
   port: 5432,
 })
 
-module.exports = class create extends Command {
+module.exports = class pull extends Command {
     constructor(client) {
         super(client, {
-            name: 'create',
+            name: 'pull',
             group: 'extra',
-            memberName: 'create',
+            memberName: 'pull',
             description: 'Creates a connect pool.',
             userPermissions: ['ADMINISTRATOR'],
         });
@@ -24,17 +24,19 @@ module.exports = class create extends Command {
 
       // INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES (user_id, username, url, uses);
 
+    pool.query(`INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES ('12435', 'TEST'', 'https://discord.gg/ABC123', '7');`, (err, res) => {
+      console.log(res);
+      if (!err) {
+        message.reply('Row inserted!');
+      }
+    })
 
-      let createTableQry = `CREATE TABLE invites(
-   inviter_user_id VARCHAR (50) PRIMARY KEY,
-   inviter_username VARCHAR (50) NOT NULL,
-   invite_url VARCHAR (50) UNIQUE NOT NULL,
-   invite_uses VARCHAR (50) UNIQUE NOT NULL);`
-
-      //pool.query(createTableQry, (err, res) => {
-        //console.log(res);
-        //pool.end;
-      //})
+    pool.query('SELECT * FROM invites', (err, res) => {
+      console.log(res.rows);
+      res.rows.forEach(function(row) {
+        console.log(row);
+      })
+    })
 
     }
 };
