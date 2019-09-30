@@ -9,14 +9,6 @@ const client = new CommandoClient({
   disableEveryone: true,
 });
 
-const pool = new Pool({
-  user: 'nimrgldfvtcpxs',
-  host: 'ec2-174-129-226-232.compute-1.amazonaws.com',
-  database: 'dvf45uru2evs7',
-  password: 'dab5cf11240c436785e142b91e7a1cf46c4819444a1279c819538061cc2ed7ab',
-  port: 5432,
-})
-
 //////////////////////////
 // FUNCTION DELCARATION //
 //////////////////////////
@@ -47,7 +39,7 @@ client.on('error', e => {
 });
 
 client.on("guildMemberAdd", member => {
-  
+
   return;
 })
 
