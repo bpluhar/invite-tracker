@@ -29,6 +29,7 @@ module.exports = class pull extends Command {
       if (!err) {
         message.reply('Row inserted!');
       }
+      pool.end;
     })
 
     pool.query('SELECT * FROM invites', (err, res) => {
@@ -36,6 +37,7 @@ module.exports = class pull extends Command {
       res.rows.forEach(function(row) {
         console.log(row);
       })
+      pool.end;
     })
 
     }
