@@ -22,8 +22,14 @@ module.exports = class create extends Command {
     }
     run(message) {
 
+      let createTableQry = `CREATE TABLE invites(
+   inviter_user_id VARCHAR (50) PRIMARY KEY,
+   inviter_username VARCHAR (50) NOT NULL,
+   invite_url VARCHAR (50) UNIQUE NOT NULL,
+   invite_uses VARCHAR (50) UNIQUE NOT NULL);`
+
       pool.query('SELECT NOW()', (err, res) => {
-        console.log(res.rows[0].now);
+        message.reply(res);
         pool.end;
       })
 
