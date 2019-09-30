@@ -23,7 +23,7 @@ module.exports = class pull extends Command {
     run(message) {
 
       // INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES (user_id, username, url, uses);
-
+/*
     pool.query(`INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES ('12435', 'TEST', 'https://discord.gg/ABC123', '7');`, (err, res) => {
       console.log(res);
       if (!err) {
@@ -31,7 +31,7 @@ module.exports = class pull extends Command {
       }
       pool.end;
     })
-
+*/
     pool.query('SELECT * FROM invites', (err, res) => {
       console.log(res.rows);
       res.rows.forEach(function(row) {
