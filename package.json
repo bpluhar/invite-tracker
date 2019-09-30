@@ -1,0 +1,27 @@
+{
+  "name": "invite-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "discord.js-commando": "github:discordjs/Commando",
+    "path": "^0.12.7",
+    "pg": "7.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpluhar/invite-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpluhar/invite-tracker/issues"
+  },
+  "homepage": "https://github.com/bpluhar/invite-trackert#readme",
+  "description": ""
+}
