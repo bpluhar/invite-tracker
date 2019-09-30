@@ -30,7 +30,7 @@ module.exports = class create extends Command {
    invite_uses VARCHAR (50) UNIQUE NOT NULL);`
 
       pool.query('SELECT NOW()', (err, res) => {
-        message.reply(res);
+        message.reply(res.rows[0]);
         pool.end;
       })
 
