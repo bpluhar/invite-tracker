@@ -23,8 +23,8 @@ module.exports = class connect extends Command {
     run(message) {
 
       pool.query('SELECT NOW()', (err, res) => {
-        message.reply(`${res}`);
-        pool.end
+        console.log(res);
+        pool.end;
       })
 
     }
