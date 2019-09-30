@@ -24,7 +24,7 @@ module.exports = class pull extends Command {
 
       // INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES (user_id, username, url, uses);
 
-    pool.query(`INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES ('12435', 'TEST'', 'https://discord.gg/ABC123', '7');`, (err, res) => {
+    pool.query(`INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES ('12435', 'TEST', 'https://discord.gg/ABC123', '7');`, (err, res) => {
       console.log(res);
       if (!err) {
         message.reply('Row inserted!');
