@@ -22,6 +22,8 @@ module.exports = class create extends Command {
     }
     run(message) {
 
+      // INSERT INTO invites (inviter_user_id, inviter_username, invite_url, invite_uses) VALUES (user_id, username, url, uses);
+
 
       let createTableQry = `CREATE TABLE invites(
    inviter_user_id VARCHAR (50) PRIMARY KEY,
@@ -29,8 +31,8 @@ module.exports = class create extends Command {
    invite_url VARCHAR (50) UNIQUE NOT NULL,
    invite_uses VARCHAR (50) UNIQUE NOT NULL);`
 
-      pool.query('SELECT NOW()', (err, res) => {
-        message.reply(`${res.rows[0].now}`);
+      pool.query(createTableQry, (err, res) => {
+        console.log(res);
         pool.end;
       })
 
