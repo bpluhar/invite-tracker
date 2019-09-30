@@ -22,6 +22,7 @@ module.exports = class create extends Command {
     }
     run(message) {
 
+
       let createTableQry = `CREATE TABLE invites(
    inviter_user_id VARCHAR (50) PRIMARY KEY,
    inviter_username VARCHAR (50) NOT NULL,
